@@ -5,95 +5,253 @@
     <head>
         <meta charset="ISO-8859-1">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>New User</title>
-        <style>
-            *{
-                font-family: sans-serif;
-            }
-            body{
-                background-position: center;
-                background-size: cover;
-                background-color: #04AA6D;                
-            }
-            .close {
-                position: absolute;
-                right: 32px;
-                top: 32px;
-                width: 32px;
-                height: 32px;
-                opacity: 0.3;
-            }
-            .close:hover {
-                opacity: 1;
-            }
-            .close:before, .close:after {
+        <title>Sign Up </title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0%;
+            padding: 0%;
+            text-decoration: none;
+            font-family: sans-serif;
+            outline: none;
+            border: none;
+        }
+        html,body{
+            height: 100%;
+            background-color: #0a0a0a;
+        }
+        .align{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-bottom: 8px;
+        }
+        .card{
+            margin-top: 28px;
+            height: 100%;
+            max-height: 550px;
+            width: 396px;
+            background: #121212;
+            border: 1px sloid #373737;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: max-height 0.2s;
+        }
+        .head{
+            width: 100%;
+            display: flex;
+            height: 72px;
+            border-bottom: 1px solid #373737;
+            justify-content: space-between;
+        }
+        .head a{
+            height: 100%;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 20px;
+            color: rgb(140, 140, 140);
+            justify-content: center;
+        }
+        .head .selected{
+            position: relative;
+            color: #007FFF;
+            font-weight: 700;
+        }
+        .head .selected::after{
             position: absolute;
-            left: 15px;
-            content: ' ';
-            height: 33px;
-            width: 2px;
-            background-color: #333;
+            content: "";
+            bottom: 0%;
+            left: 0%;
+            height: 5px;
+            background: #007FFF;
+            width: 100%;
+            border-radius: 99px 99px 0 0;
+
+        }
+        .tabs{
+            height: calc(100% -72px);
+            display: flex;
+        }
+        form{
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            padding: 44px 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            right: 0%;
+            transition: right 0.2s;
+        }
+        .inputs{
+            width: 100%;
+            padding-top: 6px;
+        }
+        /* Login form div*/
+        .input{
+            position: relative;
+            margin-bottom: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        input{
+            width: 100%;
+            font-size: 17px;
+            background-color: #1c1c1c;
+            padding: 16px 18px 16px 31px;
+            color: rgb(220,220,220);
+            border-radius: 8px;
+        }
+        /* Login- Remeber */
+        .checkbox{
+            height: 40px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+        .checkbox input{
+            content: "";
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            margin-right: 16px;
+        }
+        /* Login- Remember me text */
+        .checkbox span{
+            display: flex;
+            align-items: center;
+            color: rgb(110,110,110);
+            font-size: 16px;
+            user-select: none;            
+        }
+        button{
+            display: block;
+            background: #007FFF;
+            border-radius: 5px;
+            padding: 14px 52px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 21px;
+            cursor: pointer;
+        }
+        /* Registration form div*/
+        .input-reg{
+            position: relative;
+            margin-bottom: 12px;
+            width: 100%;
+            display: flex;
+            align-items: center;         
+        }
+        /* Name div */
+        #name{
+            display: flex;
+            justify-content: space-between;
+            text-align: center;        
+        }
+        .extend form{
+            right: 100%
+        }
+        /* Registration message */
+        .message{
+            color:rgb(110,110,110);
+            font-size: 16px;
+            padding-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="align">
+        <div class="card">
+        <!-- nav bar -->
+        <div class="head">
+            <div></div>
+            <a href="#login" class="selected" id="login">Login</a>
+            <a href="#register" id="register">Register </a>
+            <div></div>
+            </div>
+            <div class="tabs">
+                <form action="">
+                    <!-- user name input -->
+                    <div class="inputs">
+                    <div class="input">
+                         <input type="text" placeholder="Username">
+                     </div>   
+                    
+                    <div class="input">
+                        <input type="password" placeholder="Password">
+                        </div>
+                        <!-- checkbox -->
+                        <label for="" class="checkbox">
+                            <input type="checkbox">
+                            <span>Remember Me</span>
+                        </label>
+                        </div>
+                        <!-- login button -->
+                        <button style="margin-top: 50px;">Login</button> 
+                        <!-- inline CSS -->
+                </form>
+                <!-- registration form -->
+                <form action="">
+                    <div class="inputs">
+                        <div id="name"> 
+                        <div class="input-reg">    
+                            <input type="text" placeholder="First Name">
+                            </div>   
+                        <div class="input-reg">
+                            <!-- inline CSS -->
+                            <input type="text" placeholder="Last Name" style="margin-left:10px;">
+                            </div>
+                        </div>
+                        <div class="input-reg">
+                            <input type="email" placeholder="Email">
+                            </div>
+                        <div class="input-reg">
+                            <input type="password" placeholder="Password">
+                            </div>
+                        <div class="input-reg">
+                            <input type="text" placeholder="Address">
+                            </div>
+                        <div class="input-reg">
+                            <input type="number" placeholder="Phone No.">
+                            </div>
+                            <p class="message">Already Registered ? <a href="#login">Login</a></p>
+                            <!-- Register button -->
+                            <!-- inline CSS -->
+                            <button style="margin:auto;">Register</button>
+                </form>
+            </div>
+        </div>
+     </div>
+     
+     <!-- Jquery CDN link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- jquery -->
+    <script>
+        $(window).on("hashchange",
+        function(){
+            if(location.hash.slice(1)=="register"){
+                $(".card").addClass("extend");
+                $("#login").removeClass("selected");
+                $("#register").addClass("selected");
             }
-            .close:before {
-            transform: rotate(45deg);
+            else{
+                $(".card").removeClass("extend");
+                $("#login").addClass("selected");
+                $("#register").removeClass("selected"); 
             }
-            .close:after {
-            transform: rotate(-45deg);
-            }
-            .container{
-                overflow: hidden;
-                width: 370px;
-                height: 530px;
-                margin: 8% auto;
-                background: #fff;
-                border-radius: 10px;
-                position: relative;
-            }
-            .container form{
-                width: 280px;
-                position:relative;
-                top: 20px;
-                bottom: 40px;
-                margin-left: 20px;
-            }
-            form input{
-                width: 100%;
-                padding: 10px 5px;
-                margin: 5px 0;
-                border:0;
-                display: inline-block;
-                border-bottom: 1px solid #999;
-                outline: none;
-                background: transparent;
-            }
-            ::placeholder{
-                color: #777;          
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <a href="#" class="close"></a>
-            <form action="../AddCustomer" method = "post" >
-                <p style="color:#777;text-align: center;font-size: 25px    ;">CREATE ACCOUNT</p>
-                <input name="fname" type="text" size="20" required='required' 
-                           placeholder="First Name"/>             
-                <input name="lname" type="text" size="20" required='required' 
-                           placeholder="Last Name"/>               
-                <input name="email" type="email" size="50" required='required' 
-                           placeholder="Email"/>         
-                <input name="add" type="text" size="50" required='required'
-                           placeholder="Address"/>           
-                <input name="city" type="text" size="25" required='required'
-                           placeholder="City"/>
-                <input name="Pincode" type="number" size="25" required="required" placeholder="PINCODE">  
-                <input name="password" type="password" size="25" required='required'
-                           placeholder="Password"/>  
-                <input name="cnfpassword" type="password" size="25" required='required'
-                           placeholder="Confirm Password"/>         
-                        
-                <input type="submit" value="SIGN UP" style = "color: #777;outline: none;border-radius: 30px;background-color: #04AA6D;font-size: 25px;">     
-            </div>   
-            </form>
-   </body>
+        });
+
+        $(window).trigger("hashchange");
+    </script>
+</body>
 </html>
