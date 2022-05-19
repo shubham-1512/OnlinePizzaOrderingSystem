@@ -226,7 +226,7 @@
                             <p class="message">Already Registered ? <a href="#login">Login</a></p>
                             <!-- Register button -->
                             <!-- inline CSS -->
-                            <button style="margin:auto;">Register</button>
+                            <button class="confirm" style="margin:auto;">Register</button>
                 </form>
             </div>
         </div>
@@ -250,8 +250,10 @@
                 $("#register").removeClass("selected"); 
             }
         });
-
         $(window).trigger("hashchange");
+        $('.confirm').on('click', function () {
+        return confirm('Registration Successful!!!!');
+    });
     </script>
 </body>
 </html>
